@@ -2,6 +2,7 @@ package com.sss.spring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.sss.spring.config.AppConfig;
 import com.sss.spring.util.FileChecker;
@@ -10,7 +11,7 @@ import com.sss.spring.util.FileUtil;
 public final class App {
 
     public static void normal() {
-        System.out.println("🔥 Providing Dependencies Normally 🔥");
+        System.out.println(" Providing Dependencies Normally ");
 
         FileUtil util = new FileUtil();
 
@@ -19,7 +20,7 @@ public final class App {
     }
 
     public static void withSpringJavaConfig() {
-        System.out.println("🔥 Providing Dependencies With Java Code 🔥");
+        System.out.println(" Providing Dependencies With Java Code ");
         ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
         String[] names = ctx.getBeanDefinitionNames();
@@ -32,7 +33,7 @@ public final class App {
     }
 
     public static void withSpringXmlConfig() {
-        System.out.println("🔥 Providing Dependencies With Xml Config 🔥");
+        System.out.println(" Providing Dependencies With Xml Config ");
         ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 
         FileChecker checker = ctx.getBean(FileChecker.class);
