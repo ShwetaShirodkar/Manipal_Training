@@ -1,32 +1,89 @@
-public class BankAccount {
-    private double balance;
-    private String account;
+import java.util.Scanner;
+
+// public class BankAccount {
+//     private double balance;
+//     private String account;
+//     private String ownerName;
+//     private Object accountNumber;
+    
+//     // setters
+//     public void setBalance(double balance) {
+//         this.balance = balance;
+//     }
+    
+//     public void setAccountNumber(String account) {
+//         this.accountNumber = accountNumber;
+//     }
+    
+//     public void setOwner(String ownerName) {
+//         this.ownerName = ownerName;
+//     }
+    
+//      //getters
+//          public double getBalance() {
+//         return balance;
+//     }
+    
+//     public String getNumber() {
+//         return (String)accountNumber;
+//     }
+    
+//     public String getOwnerName() {
+//         return ownerName;
+//     }
+// }
+
+
+
+class BankAccount {
+    private int balance;
+    private String accountNumber;
     private String ownerName;
-    private Object accountNumber;
-    
-    // setters
-    public void setBalance(double balance) {
-        this.balance = balance;
+
+    public BankAccount(int bal, String ac, String name) {
+        this.balance = bal;
+        this.accountNumber = ac;
+        this.ownerName = name;
+
     }
-    
-    public void setAccountNumber(String account) {
-        this.accountNumber = accountNumber;
+
+    public void getBal() {
+        System.out.println("Balance is " + this.balance);
     }
-    
-    public void setOwner(String ownerName) {
-        this.ownerName = ownerName;
+
+    public void getac() {
+        System.out.println("Account " + this.accountNumber);
     }
-    
-     //getters
-         public double getBalance() {
-        return balance;
+
+    public void getname() {
+        System.out.println("Owner " + this.ownerName);
     }
-    
-    public String getNumber() {
-        return (String)accountNumber;
+}
+public class Main {
+    public static void helper_function() {
+        //make modifications in the code below to accept input
+        //Don't forget to enter values in custom input box
+        Scanner sc = new Scanner(System.in);
+        String x = sc.nextLine();
+        String y = sc.nextLine();
+        String z = sc.nextLine();
+        int i = 0;
+        String[] a = x.split("= ");
+        int bal = Integer.parseInt(a[0]);
+        a = y.split("= ");
+        String b = a[0];
+        a = z.split("= ");
+        String c = a[0];
+        BankAccount ba = new BankAccount(bal, b, c);
+        ba.getBal();
+        ba.getac();
+        ba.getname();
+
     }
-    
-    public String getOwnerName() {
-        return ownerName;
+
+    public static void main(String[] args) {
+        helper_function();
     }
+
+
 }
