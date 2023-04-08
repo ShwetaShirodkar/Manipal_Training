@@ -1,12 +1,10 @@
-package com.sss.springboot.SpringBoot;
-
+package com.sss.webfluxdemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 @SpringBootTest
-class SpringBootUnderstandingApplicationTests {
+class WebfluxDemoApplicationTests {
 
 	@Test
 	void contextLoads() {
